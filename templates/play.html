@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexup - Play</title>
+    <link rel="stylesheet" href="../static/css/game.css">
+</head>
+<body style="background-color: #001f3f; color: #fff;">
+    <h1 style="color: #4CAF50;">Lexup - Play</h1>
+    <div id="word-container"></div>
+    <div id="hint-container"></div>
+    <div id="joker-container">
+        <button style="background-color: #ffeb3b; color: #333;" onclick="useJoker()">Joker</button>
+        <span id="joker-count">5</span>
+    </div>
+    <div id="attempts-container">Kalan Hak: <span id="attempts-count">3</span></div>
+    <button style="background-color: #f44336; color: #fff;" onclick="goBackToCategories()">Geri</button>
+    <button id="view-image-button" style="display: none; background-color: #4CAF50; color: #fff;" onclick="toggleImageModal()">Kazandığın Resmi Gör</button>
+    <button id="next-word-button" style="display: none; background-color: #4CAF50; color: #fff;" onclick="nextWord()">Sonraki</button>
+
+    <div id="image-modal" class="modal" style="display: none;">
+        <span class="close" onclick="toggleImageModal()">&times;</span>
+        <img class="modal-content" id="won-image">
+    </div>
+
+    <div id="notification-container" class="notification-container"></div>
+
+    <script src="../static/js/play.js"></script>
+    <script>
+        function goBackToCategories() {
+            window.location.href = 'category.html';
+        }
+    </script>
+</body>
+</html>

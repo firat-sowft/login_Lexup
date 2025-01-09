@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexup - Collection</title>
+    <link rel="stylesheet" href="../static/css/game.css">
+</head>
+<body style="background-color: #001f3f; color: #fff;">
+    <h1 style="color: #4CAF50;">Koleksiyonum</h1>
+    <div id="collection-container" class="collection-grid"></div>
+    <button style="background-color: #f44336; color: #fff;" onclick="goBack()">Geri</button>
+
+    <div id="image-modal" class="modal" style="display: none;">
+        <span class="close" onclick="toggleImageModal()">&times;</span>
+        <img class="modal-content" id="full-image">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const collectionContainer = document.getElementById('collection-container');
+            const collection = JSON.parse(localStorage.getItem('collection')) || [];
+            collection.forEach(word => {
+                const img = document.createElement('img');
+                img.src = `../images/${word}.jpg`; // Assuming images are named after the words
+                img.alt = word;
+                img.classList.add('collection-image');
+                img.onclick = () => showImageModal(img.src);
+                collectionContainer.appendChild(img);
+            });
+        });
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function showImageModal(src) {
+            const modal = document.getElementById('image-modal');
+            const fullImage = document.getElementById('full-image');
+            fullImage.src = src;
+            modal.style.display = 'block';
+        }
+
+        function toggleImageModal() {
+            const modal = document.getElementById('image-modal');
+            if (modal.style.display === 'none' || modal.style.display === '') {
+                modal.style.display = 'block';
+            } else {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

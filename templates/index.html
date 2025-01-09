@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexup</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body style="background-color: #001f3f; color: #fff;">
+    <div id="main-page">
+        <h1 style="color: #4CAF50;">Lexup</h1>
+        <p>Hoşgeldiniz</p>
+        <button style="background-color: #4CAF50; color: #fff;" onclick="showLoginPage()">Giriş Yap</button>
+        <button style="background-color: #4CAF50; color: #fff;" onclick="showRegisterPage()">Hesap Oluştur</button>
+        <button style="background-color: #4CAF50; color: #fff;" onclick="guestLogin()">Misafir Girişi</button>
+        <a href="about.html" style="color: #2196F3;">Hakkımızda</a>
+    </div>
+
+    <div id="login-page" class="hidden">
+        <h1>Lexup</h1>
+        <h2>Hoşgeldiniz!</h2>
+        <label for="email">E-posta:</label>
+        <input type="email" id="login-email" placeholder="example@gmail.com" required>
+        <label for="password">Şifre:</label>
+        <input type="password" id="login-password" required>
+        <a href="#" onclick="showForgotPasswordPage()">Şifremi Unuttum</a>
+        <button onclick="login()">Onayla</button>
+        <button onclick="showMainPage()">Geri</button>
+        <p id="login-message"></p>
+    </div>
+
+    <div id="register-page" class="hidden">
+        <h1>Lexup</h1>
+        <h2>Hesap Oluştur</h2>
+        <label for="register-email">E-posta:</label>
+        <input type="email" id="register-email" placeholder="example@gmail.com" required>
+        <button onclick="sendVerificationCode()">Doğrulama Kodunu Gönder</button>
+        <div id="verification-section" class="hidden">
+            <label for="verification-code">Doğrulama Kodu:</label>
+            <input type="text" id="verification-code" required>
+            <label for="register-password">Şifre:</label>
+            <input type="password" id="register-password" required>
+            <label for="confirm-password">Şifreyi Onayla:</label>
+            <input type="password" id="confirm-password" required>
+            <button onclick="register()">Onayla</button>
+            <p id="verification-timer"></p>
+        </div>
+        <button onclick="showMainPage()">Geri</button>
+        <p id="register-message"></p>
+    </div>
+
+    <div id="forgot-password-page" class="hidden">
+        <h1>Lexup</h1>
+        <h2>Şifremi Unuttum</h2>
+        <label for="forgot-email">E-posta:</label>
+        <input type="email" id="forgot-email" placeholder="example@gmail.com" required>
+        <button onclick="sendForgotPasswordCode()">Doğrulama Kodunu Gönder</button>
+        <div id="forgot-verification-section" class="hidden">
+            <label for="forgot-verification-code">Doğrulama Kodu:</label>
+            <input type="text" id="forgot-verification-code" required>
+            <label for="new-password">Yeni Şifre:</label>
+            <input type="password" id="new-password" required>
+            <label for="confirm-new-password">Yeni Şifreyi Onayla:</label>
+            <input type="password" id="confirm-new-password" required>
+            <button onclick="resetPassword()">Onayla</button>
+            <p id="forgot-timer"></p>
+        </div>
+        <button onclick="showLoginPage()">Geri</button>
+        <p id="forgot-message"></p>
+    </div>
+
+    <script src="../static/js/scripts.js"></script>
+</body>
+</html>

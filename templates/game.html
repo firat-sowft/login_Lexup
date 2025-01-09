@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexup - Game</title>
+    <link rel="stylesheet" href="../static/css/game.css">
+</head>
+<body style="background-color: #001f3f; color: #fff;">
+    <div id="main-menu">
+        <h1 style="color: #4CAF50;">Lexup</h1>
+        <button class="game-button" onclick="startGame()">Oyuna Başla</button>
+        <button class="game-button" onclick="showCollection()">Koleksiyonum</button>
+        <button class="game-button" onclick="logout()">Hesaptan Çık</button>
+        <button class="game-button" onclick="showHowToPlay()">Nasıl Oynanır</button>
+    </div>
+
+    <div id="categories-menu" style="display: none;">
+        <h1>Kategoriler</h1>
+        <button class="category-button" onclick="selectCategory('lotr')">Yüzüklerin Efendisi</button>
+        <button class="category-button" onclick="selectCategory('marvel')">Marvel</button>
+        <button class="category-button" onclick="selectCategory('legends')">Efsaneler</button>
+        <button class="back-button" onclick="goBack()">Geri</button>
+    </div>
+
+    <div id="how-to-play" style="display: none;">
+        <h1>Bu Oyun Nasıl Oynanır?</h1>
+        <p>Oyunda verilen kelimeyi tahmin etmeye çalışacaksınız. Her harfi doğru kutuya yerleştirin:</p>
+        <ul>
+            <li>Harf doğru ve yerinde ise kutu yeşil olur.</li>
+            <li>Harf doğru ama yeri yanlış ise kutu turuncu olur.</li>
+            <li>Harf yanlış ise kutu kırmızı olur.</li>
+        </ul>
+        <p>Joker kullanarak rastgele bir harfi açabilirsiniz. Her gün 5 joker hakkınız var.</p>
+        <p>Tüm kelimeleri doğru tahmin ederek koleksiyonunuzu tamamlayın!</p>
+        <button class="back-button" onclick="goBack()">Geri</button>
+    </div>
+
+    <script src="../static/js/game.js"></script>
+    <script>
+        function selectCategory(category) {
+            window.location.href = `play.html?category=${category}`;
+        }
+
+        function showCollection() {
+            window.location.href = 'collection.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lexup - Categories</title>
+    <link rel="stylesheet" href="../static/css/game.css">
+</head>
+<body style="background-color: #001f3f; color: #fff;">
+    <h1 style="color: #4CAF50;">Kategoriler</h1>
+    <button class="category-button" onclick="selectCategory('lotr')">Yüzüklerin Efendisi</button>
+    <button class="category-button" onclick="selectCategory('marvel')">Marvel</button>
+    <button class="category-button" onclick="selectCategory('legends')">Efsaneler</button>
+    <button class="back-button" onclick="showMainMenu()">Geri</button>
+
+    <script src="../static/js/game.js"></script>
+    <script>
+        function selectCategory(category) {
+            window.location.href = `play.html?category=${category}`;
+        }
+
+        function showMainMenu() {
+            window.location.href = 'game.html';
+        }
+    </script>
+</body>
+</html>
